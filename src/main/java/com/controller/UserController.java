@@ -21,7 +21,7 @@ import com.model.City;
 import com.model.Country;
 import com.model.Department;
 import com.model.Hobbies;
-import com.model.Language;
+import com.model.Languages;
 import com.model.User;
 import com.service.UserService;
 
@@ -49,7 +49,7 @@ public class UserController
 		return userService.getAllCountries();
 	}
 	@ModelAttribute("lang")
-	public List<Language> populateLan()
+	public List<Languages> populateLan()
 	{
 		return userService.getLanguage();
 	}
@@ -71,7 +71,11 @@ public class UserController
 	{
 		if(result.hasErrors())
 			return "userForm";
+		
+		user.setLanguageList(user.getLanguages().toString());
+		user.setHobbiesList(user.getHobbies().toString());
 		model.put("user",user);
+		
 		userService.addUser(user);
 		return "userSuccess";
 	}

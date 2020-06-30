@@ -1,10 +1,10 @@
 package com.model;
 
-public class Language
+public class Languages
 {
 	private String key;
 	private String value;
-	public Language(String key, String value)
+	public Languages(String key, String value)
 	{
 		super();
 		this.key = key;

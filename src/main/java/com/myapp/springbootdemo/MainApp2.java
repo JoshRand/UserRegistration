@@ -17,7 +17,7 @@ import com.model.City;
 import com.model.Country;
 import com.model.Department;
 import com.model.Hobbies;
-import com.model.Language;
+import com.model.Languages;
 import com.model.User;
 import com.service.UserService;
 

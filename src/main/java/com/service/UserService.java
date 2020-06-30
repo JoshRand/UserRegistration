@@ -10,7 +10,7 @@ import com.model.City;
 import com.model.Country;
 import com.model.Department;
 import com.model.Hobbies;
-import com.model.Language;
+import com.model.Languages;
 import com.model.User;
 
 public interface UserService
@@ -19,7 +19,7 @@ public interface UserService
 	public List<Country> getAllCountries();
 	public List<Hobbies> getHobbies();
 	public List<City> getAllCities();
-	public List<Language> getLanguage();
+	public List<Languages> getLanguage();
 	public List<User> findAllUsers();
 	void addUser(User user);
 	

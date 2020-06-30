@@ -16,7 +16,7 @@ import com.model.City;
 import com.model.Country;
 import com.model.Department;
 import com.model.Hobbies;
-import com.model.Language;
+import com.model.Languages;
 import com.model.User;
 @Service
 @Component
@@ -70,12 +70,12 @@ public class UserServiceImpl implements UserService
 		return countryList;
 	}
 	@Override
-	public List<Language> getLanguage()
+	public List<Languages> getLanguage()
 	{
-		List<Language> lan = new ArrayList<Language>();
-		lan.add(new Language("english","english"));
-		lan.add(new Language("french","french"));
-		lan.add(new Language("spanish","spanish"));
+		List<Languages> lan = new ArrayList<Languages>();
+		lan.add(new Languages("english","english"));
+		lan.add(new Languages("french","french"));
+		lan.add(new Languages("spanish","spanish"));
 		// TODO Auto-generated method stub
 		return lan;
 	}

@@ -2,9 +2,11 @@ package com.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -12,7 +14,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ListIndexBase;
 import org.springframework.beans.factory.annotation.Autowired;
-
 
 @Entity
 @Table(name="USER_DATA")
@@ -29,11 +30,29 @@ public class User
 	private String city;
 	private String department;
 	private String country;
-	//@ElementCollection(targetClass=String.class)
-	@ElementCollection
+	public String getHobbiesList()
+	{
+		return hobbiesList;
+	}
+	public void setHobbiesList(String hobbiesList)
+	{
+		this.hobbiesList = hobbiesList;
+	}
+	public String getLanguageList()
+	{
+		return languageList;
+	}
+	public void setLanguageList(String languageList)
+	{
+		this.languageList = languageList;
+	}
+	private String hobbiesList;
+	private String languageList;
+	@ElementCollection(targetClass=String.class)
+	//@ElementCollection
 	private List<String> hobbies;
-	//@ElementCollection(targetClass=String.class)
-	@ElementCollection
+	@ElementCollection(targetClass=String.class)
+	//@ElementCollection
 	private List<String> languages;
 	@Override
 	public String toString()
@@ -46,25 +65,27 @@ public class User
 	public User()
 	{
 		super();
+		//hobbiesList = hobbies.toString();
+		//languageList = languages.toString();
 		// TODO Auto-generated constructor stub
 	}
 	
 
-	public List getHobbies()
+	public List<String> getHobbies()
 	{
 		return hobbies;
 	}
-	public void setHobbies(List hobbies)
+	public void setHobbies(List<String> hobbies)
 	{
 		this.hobbies = hobbies;
 	}
 
 
-	public List getLanguages()
+	public List<String> getLanguages()
 	{
 		return languages;
 	}
-	public void setLanguages(List languages)
+	public void setLanguages(List<String> languages)
 	{
 		this.languages = languages;
 	}
